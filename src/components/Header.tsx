@@ -22,6 +22,14 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const menuItems = [
+    { label: "Início", id: "home" },
+    { label: "O que fazemos", id: "o-que-fazemos" },
+    { label: "Por que nós", id: "por-que-nos" },
+    { label: "Galeria", id: "galeria" },
+    { label: "Contato", id: "contato" }
+  ];
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? "bg-white/90 backdrop-blur-md shadow-lg" : "bg-transparent"
@@ -33,13 +41,13 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            {["Início", "O que fazemos", "Por que nós", "Galeria", "Contato"].map((item, index) => (
+            {menuItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(index === 0 ? "home" : item.toLowerCase().replace(" ", "-"))}
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
                 className="text-gray-700 hover:text-purple-600 transition-colors duration-200 relative group"
               >
-                {item}
+                {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
@@ -55,13 +63,13 @@ const Header = () => {
 
         {isMenuOpen && (
           <nav className="md:hidden mt-4 space-y-4 bg-white/95 backdrop-blur-md rounded-lg p-4">
-            {["Início", "O que fazemos", "Por que nós", "Galeria", "Contato"].map((item, index) => (
+            {menuItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(index === 0 ? "home" : item.toLowerCase().replace(" ", "-"))}
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
                 className="block w-full text-left text-gray-700 hover:text-purple-600 transition-colors duration-200"
               >
-                {item}
+                {item.label}
               </button>
             ))}
           </nav>

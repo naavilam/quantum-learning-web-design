@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Heart, Shield, Sparkles, Users, Zap, Target } from "lucide-react";
 
@@ -51,7 +50,7 @@ const WhyChooseUsSection = () => {
   }, []);
 
   return (
-    <section id="por-que-nós" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="por-que-nos" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.05),transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.05),transparent_50%)] pointer-events-none"></div>
       
